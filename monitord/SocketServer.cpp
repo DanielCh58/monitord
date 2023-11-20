@@ -2,6 +2,7 @@
 #include "SocketThreadMonitord.h"
 #include "SocketThreadFMS32.h"
 #include "SocketThreadCrusader.h"
+#include <unistd.h>
 
 #ifndef WIN32
 	#include <sys/param.h>
