@@ -142,7 +142,7 @@ int main(int argc, char** argv)
 	#ifdef WIN32
 				}
 			}
-		} catch (MonitorServiceException(err))
+		} catch (MonitorServiceException& err)
 		{
 			// FIXME: Dienste koennen nicht auf die Console schreiben, da siehe
 			// unsichtbar im Hintergrund laufen
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
 		}
 	#endif
 
-	} catch (MonitorException(err))
+	} catch (MonitorException& err)
 	{
 		LOG_ERROR(err.what() )
 	}
