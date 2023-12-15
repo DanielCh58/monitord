@@ -801,7 +801,7 @@ void MonitorModuleFMS::fms_txt(short offset, char *c)
 			/*	Steuerzeichen ausgeben?	*/
 			if (vals.ctrl
 			/*	Umlaute	*/
-			|| ((*str & 0x58) == 0x58 && (*str & 0x7) >= 3 && (*str && 0x7) <= 5)
+			|| ((*str & 0x58) == 0x58 && (*str & 0x7) >= 3 && (*str & 0x7) <= 5)
 			/* ?	*/
 			|| *str == 0x7e) {
 				tlen= strlen(tstr);
