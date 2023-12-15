@@ -1,6 +1,6 @@
-
 #include <typeinfo>
 #include <iostream>
+#include <unistd.h>
 
 #ifdef WIN32
 #define usleep Sleep
@@ -135,7 +135,7 @@ class MonitorPlugInMySQL : public MonitorPlugIn
 
 		#if (MYSQL_VERSION_ID>50013)
 		/* for mysql V5.0.3+ is auto_reconnect disabled by default*/
-		my_bool reconnect = 1;
+		bool reconnect = 1;
 		mysql_options(&m_mysql, MYSQL_OPT_RECONNECT, &reconnect);
 		#endif
 
