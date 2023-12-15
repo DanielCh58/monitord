@@ -2,6 +2,7 @@
 #include "SocketThreadMonitord.h"
 #include "SocketThreadFMS32.h"
 #include "SocketThreadCrusader.h"
+#include <unistd.h>
 
 #ifndef WIN32
 	#include <sys/param.h>
@@ -753,7 +754,7 @@ void SocketThread::createSocket()
         	strncat(m_CommandBuffer,buffer,MAX_COMMANDLINE-strlen(m_CommandBuffer)-1) ;
 
 			/* Erst wenn mindestens eine Eingabezeile empfangen wurde, werden alle vollständigen Zeilen ausgewertet */
-			while ((posPtr=strstr(m_CommandBuffer,"\r\n"))>0)
+			while ((posPtr=strstr(m_CommandBuffer,"\r\n")) != nullptr)
 			{
 				/* Puffer nach dem CRLF zwischenspeichern */
 				char tempbuffer[MAX_COMMANDLINE] ;
