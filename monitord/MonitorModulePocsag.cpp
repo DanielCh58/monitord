@@ -131,15 +131,18 @@ void MonitorModulePocsag::do_one_bit(struct rx *rx, unsigned long rx_data)
 {
 	unsigned char rxword;
 
-	unsigned char dumpString[5] ;
 	unsigned long data;
 	unsigned char *bp;
 
+	/**
+	 * not used
+	unsigned char dumpString[5] ;
 	dumpString[0]=0x00 ;
 	dumpString[1]=0x00 ;
 	dumpString[2]=0x00 ;
 	dumpString[3]=0x00 ;
 	dumpString[4]=0x00 ;
+	**/
 
 	/* TODO: Hack fuer 64Bit Systeme. Da ist ein unsigned long 8 Byte gross. Die
 	 * SYNC-Worte etc. sind aber nur 4 Byte gross. Da uns immer nur die letzten 4 Bytes
